@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+docker container kill vuln_app
+docker container rm vuln_app

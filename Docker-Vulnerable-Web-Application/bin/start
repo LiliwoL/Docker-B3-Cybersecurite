@@ -1,0 +1,2 @@
+# Lancement de VulnerableWebApp sur le port 9991
+docker run -it --name vuln_app -p 9991:80 santosomar/vuln_app:latest /bin/bash

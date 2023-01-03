@@ -8,7 +8,7 @@ https://hub.docker.com/r/prestashop/prestashop/
 ## Lancement
 
 ```bash
-$ ./run.sh
+$ bin/start
 ```
 
 ## Accès aux containers
