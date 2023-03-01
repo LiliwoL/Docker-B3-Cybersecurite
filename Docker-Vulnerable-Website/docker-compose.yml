@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+ TODO mysql
+
+  website:
+    container_name: vulnerable-website
+    build:
+      context: ./
+    volumes:
+      - ./app:/var/www/html/
+    ports:
+      - 8000:80
+    depends_on:
+      - mysql
