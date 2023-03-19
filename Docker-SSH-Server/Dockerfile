@@ -19,6 +19,11 @@ RUN  echo 'user2:user2' | chpasswd
 RUN useradd -rm -d /home/nicolas -s /usr/bin/bash -g root -G sudo -u 1002 nicolas
 RUN  echo 'nicolas:Passw@rd' | chpasswd
 
+
+# Création de l'utilisateur userfaible
+RUN useradd -rm -d /home/userfaible -s /usr/bin/bash -g root -G sudo -u 1002 userfaible
+RUN  echo 'userfaible:loulou' | chpasswd
+
 # Clés publiques
 COPY ssh_public_keys/id_rsa_prof.pub /root/.ssh/authorized_keys
 
