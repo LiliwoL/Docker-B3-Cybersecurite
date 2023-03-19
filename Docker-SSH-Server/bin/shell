@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if [ -z "$1" ]
+  then
+    docker exec -it openssh-server /bin/sh
+else
+    docker exec -it $@ /bin/sh
+fi

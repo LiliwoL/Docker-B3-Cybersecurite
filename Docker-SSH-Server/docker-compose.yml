@@ -1,0 +1,40 @@
+version: "3.1"
+
+services:
+  openssh-server:
+    image: lscr.io/linuxserver/openssh-server:latest
+    container_name: openssh-server
+    hostname: docker-ssh-server                           #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+
+      # Clés SSH publiques fournies
+      # -------------------
+      # Il faudra se connecter en tapant ssh -i /path/to/private/key -p PORT USER_NAME@SERVERIP
+      # - PUBLIC_KEY_DIR=/config/ssh_public_keys                 #optional
+      # - PUBLIC_KEY_URL=https://github.com/username.keys     #optional
+      # - PUBLIC_KEY=yourpublickey                        #optional
+      # - PUBLIC_KEY_FILE=ssh_public_keys/id_rsa_prof.pub                   #optional
+
+      - SUDO_ACCESS=true                                  # optional
+
+      # Permettre l'accès via USER:PASSWORD
+      - PASSWORD_ACCESS=true                              # On permet l'accès via USER:PASSWORD
+      - USER_NAME=admin                                   # Par défaut linuxserver.io
+      - USER_PASSWORD_FILE=/config/credentials.txt        # Fichier contenant les utilisateurs à ajouter
+      # - USER_PASSWORD=root                              # Mot de passe de l'utilisateur défini plus haut
+
+
+    volumes:
+      - ./config:/config                                   # Dossier de configuration du serveur
+      - ./banner-message.txt:/etc/motd                     # Message de bienvenue affiché à la connexion
+      # Emplacement des fichiers utilisés lors de la config
+      - ./ssh_public_keys:/config/ssh_public_keys         # Dossier contenant les clés publiques
+      - ./credentials.txt:/config/credentials.txt
+
+      - ./config-file.sh:/custom-cont-init.d:ro            # Fichier de configuration lancé au démarrage du container
+    ports:
+      - 2222:2222
+    restart: unless-stopped
