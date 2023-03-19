@@ -14,6 +14,11 @@ User: user2
 
 Password: user2
 
+
+User: nicolas
+
+Password: `Passw@rd`
+
 # Dossiers et fichiers
 
 - ssh_public_keys/
