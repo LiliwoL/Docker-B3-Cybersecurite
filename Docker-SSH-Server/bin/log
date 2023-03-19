@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+if [ -z "$1" ]
+  then
+    docker logs --follow openssh-server
+else
+    docker logs --follow $@
+fi

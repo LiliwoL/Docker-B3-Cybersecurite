@@ -1,0 +1,5 @@
+.DS_Store
+.idea
+# Docker-SSH-Server
+Docker-SSH-Server/config
+Docker-SSH-Server/ssh_public_keys
