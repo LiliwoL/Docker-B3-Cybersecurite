@@ -2,20 +2,20 @@
 
 Un container avec un serveur SSH volontairement mal protégé.
 
-https://hub.docker.com/r/linuxserver/openssh-server
-
 # Informations
 
 Port: 2222
 
-User: admin
+User: user1
 
-Password: défini dans le fichier *credentials.txt*
+Password: user1
+
+User: user2
+
+Password: user2
 
 # Dossiers et fichiers
 
-- config/
-  - Dossier de configuration du serveur
 - ssh_public_keys/
   - Placez y les clés publiques autorisées à se connecter au serveur
 
@@ -23,9 +23,7 @@ A tester avec Hydra.
 
 Identifiants existants:
 
-admin
-
-> Par défaut, l'utilisateur est défini avec `USER_NAME`dans le fichier *docker-compose.yml*
+user1 et user2*
 
 # Utilisation
 
