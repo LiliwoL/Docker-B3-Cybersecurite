@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-if [ -z "$1" ]
-  then
-    docker exec --user www-data vuln_app bash
-else
-    docker exec --user $@ vuln_app bash
-fi
