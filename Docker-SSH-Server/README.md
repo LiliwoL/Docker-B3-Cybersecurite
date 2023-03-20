@@ -22,7 +22,7 @@ Password: `Passw@rd`
 # Dossiers et fichiers
 
 - ssh_public_keys/
-  - Placez y les clés publiques autorisées à se connecter au serveur
+  - Placez-y les clés publiques autorisées à se connecter au serveur
 
 A tester avec Hydra.
 

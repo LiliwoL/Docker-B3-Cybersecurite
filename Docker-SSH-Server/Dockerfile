@@ -21,7 +21,7 @@ RUN  echo 'nicolas:Passw@rd' | chpasswd
 
 
 # Création de l'utilisateur userfaible
-RUN useradd -rm -d /home/userfaible -s /usr/bin/bash -g root -G sudo -u 1002 userfaible
+RUN useradd -rm -d /home/userfaible -s /usr/bin/bash -g root -G sudo -u 1003 userfaible
 RUN  echo 'userfaible:loulou' | chpasswd
 
 # Clés publiques
