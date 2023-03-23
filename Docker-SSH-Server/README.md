@@ -2,36 +2,42 @@
 
 Un container avec un serveur SSH volontairement mal protégé.
 
+## Paquets installés
+
+- zsh
+- iptable2 (ss)
+- openssh-server
+- vim
+
+
 # Informations
 
-Port: 2222
+- IP:   selon la machine qui héberge
+- Port: 2222
 
-User: user1
-
-Password: user1
-
-User: user2
-
-Password: user2
+Utilisateurs
+- User: user1
+- Password: user1
 
 
-User: nicolas
+- User: user2
+- Password: user2
 
-Password: `Passw@rd`
+- User: nicolas
+- Password: `Passw@rd`
 
 # Dossiers et fichiers
 
 - ssh_public_keys/
-  - Placez-y les clés publiques autorisées à se connecter au serveur
+  - Placez-y la clé publique autorisée à se connecter au serveur et nommez la **id_rsa_prof.pub**
 
-A tester avec Hydra.
+
+# A tester avec Hydra ou un script Bruteforce en python
 
 Identifiants existants:
-
-user1 et user2*
+user1 et user2
 
 # Utilisation
-
 
 - Lancement du serveur
 
@@ -50,4 +56,4 @@ user1 et user2*
 
 - Arrêt du serveur
 
-bin/stop`
+`bin/stop`
