@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  apache:
+    build:
+      context: .
+
+      # PHP Versions
+        # PHP 7.4
+        #dockerfile: versions/php-7.4/Dockerfile
+        # PHP 8.1
+        #dockerfile: versions/php-8.1/Dockerfile
+      # PHP 8.2
+      dockerfile: versions/php-8.2/Dockerfile
+
+    container_name: docker_php
+    ports:
+      - '80:80'
+      - '9003:9003'
+    volumes:
+      - '$SRC_DIR:/var/www/html'
+      - '~/.composer/cache:/var/www/.composer/cache'
+    

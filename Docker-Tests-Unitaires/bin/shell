@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Nettoyage de l'écran
+clear
+
+# Echo with figlet if exists
+if type "figlet" > /dev/null; then
+  figlet Docker PHP
+else
+  echo "Docker PHP"
+fi
+
+
+echo "Shell du container"
+docker exec -it docker_php zsh

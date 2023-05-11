@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Nom du container principal
+CONTAINER_NAME="Docker Tests unitaires"
+
+# Nettoyage de l'écran
+clear
+
+# Echo with figlet if exists
+if type "figlet" > /dev/null; then
+  figlet $CONTAINER_NAME
+else
+  echo $CONTAINER_NAME
+fi
+
+# Commande de lancement (avec lecture du fichier .env)
+docker-compose --env-file .env up -d
