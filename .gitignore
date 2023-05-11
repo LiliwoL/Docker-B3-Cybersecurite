@@ -1,5 +1,10 @@
 .DS_Store
 .idea
+vendor/
+
 # Docker-SSH-Server
 Docker-SSH-Server/config
 Docker-SSH-Server/ssh_public_keys
+
+# Docker-Tests-Unitaires
+Docker-Tests-Unitaires/app/vendor/
