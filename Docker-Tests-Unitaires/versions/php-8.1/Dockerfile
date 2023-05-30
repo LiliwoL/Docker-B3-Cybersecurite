@@ -3,7 +3,6 @@ FROM php:8.1-apache
 ENV XDEBUG_PORT 9003
 
 # Install System Dependencies
-
 RUN apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 	software-properties-common \
@@ -66,9 +65,9 @@ RUN yes | pecl install xdebug-3.1.2 && \
 RUN docker-php-ext-enable xdebug
 
 # Configuring system
-ADD /.docker/config/php.ini /usr/local/etc/php/php.ini
-ADD /.docker/config/custom-xdebug.ini /usr/local/etc/php/conf.d/custom-xdebug.ini
-COPY /.docker/users/* /var/www/
+ADD /Docker/config/php.ini /usr/local/etc/php/php.ini
+ADD /Docker/config/custom-xdebug.ini /usr/local/etc/php/conf.d/custom-xdebug.ini
+COPY /Docker/users/* /var/www/
 RUN chmod +x /usr/local/bin/*
 
 # Permissions / Shell par défaut / Activation de modules apache

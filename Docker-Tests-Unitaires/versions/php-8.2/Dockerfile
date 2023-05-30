@@ -59,16 +59,16 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 # Configuring system
 # --------------------------
 # Configure Apache
-COPY conf/vhost.conf /etc/apache2/sites-available/000-default.conf
-COPY conf/apache.conf /etc/apache2/conf-available/z-app.conf
+COPY Docker/conf/vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY Docker/conf/apache.conf /etc/apache2/conf-available/z-app.conf
 #COPY index.php /app/index.php
 RUN a2enconf z-app
 
 # Configure PHP
-COPY conf/php.ini /usr/local/etc/php/conf.d/app.ini
+COPY Docker/conf/php.ini /usr/local/etc/php/conf.d/app.ini
 
 # Rights
-COPY /.docker/users/* /var/www/
+COPY /Docker/users/* /var/www/
 RUN chmod +x /usr/local/bin/*
 
 # Permissions / Shell par défaut

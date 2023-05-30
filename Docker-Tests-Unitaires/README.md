@@ -19,7 +19,7 @@ apache:
 ```
 
 Modifiez le fichier **.env** pour l'adapter à vos besoins.
-Vous y spécifiez le paramètre SRC_DIR qui pointe vers votre dossier contenant l'application.
+Vous y spécifiez le paramètre **SRC_DIR** qui pointe vers votre dossier contenant l'application.
 
 # Lancement
 
@@ -37,29 +37,24 @@ bin/log
 
 # Lancement d'un shell
 
-Utile pour des commandes **composer** par exemple.
+On va accéder au shell du container hébergeant l'application (ou vous pouvez le faire sur votre machine si elle dispose de phpunit).
 
 ```bash
 bin/shell
 ```
 
-***
+![](readme_docs/binshell.png)
 
-# Accès
+Pour sortir, tapez **exit**
 
-http://localhost
-
-
-## Commandes utiles
-
-* Liste des containers
+Installation des dépendances **composer**
 
 ```bash
-docker container ls
+composer install
 ```
 
+Vous disposez désormais de **PhpUnit** accessible dans le dossier **vendor/bin**:
 
-* Prunage des containers non utilisés
-
-	docker container prune
-
+```bash
+vendor/bin/phpunit tests
+```

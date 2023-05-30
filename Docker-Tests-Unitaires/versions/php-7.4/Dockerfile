@@ -1,7 +1,6 @@
 FROM php:7.4-apache
 
 # Install System Dependencies
-
 RUN apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 	software-properties-common \
@@ -58,8 +57,8 @@ RUN	curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 # Configuring system
-ADD /.docker/config/php.ini /usr/local/etc/php/php.ini
-COPY /.docker/users/* /var/www/
+ADD /Docker/config/php.ini /usr/local/etc/php/php.ini
+COPY /Docker/users/* /var/www/
 RUN chmod +x /usr/local/bin/*
 
 # Permissions / Shell par défaut / Activation de modules apache

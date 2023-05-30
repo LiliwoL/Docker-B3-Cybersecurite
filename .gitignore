@@ -1,6 +1,7 @@
 .DS_Store
 .idea
 vendor/
+.env
 
 # Docker-SSH-Server
 Docker-SSH-Server/config

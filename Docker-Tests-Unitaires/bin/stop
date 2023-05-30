@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
+if [ -z "$1" ]
+  then
 
-# Nettoyage de l'écran
-clear
+    # Echo with figlet if exists
+    if type "figlet" > /dev/null; then
+      figlet "Arret de tous les containers"
+    else
+      echo "Arret de tous les containers"
+    fi
 
-# Echo with figlet if exists
-if type "figlet" > /dev/null; then
-  figlet Docker PHP
+		docker-compose down
 else
-  echo "Docker PHP"
+
+  # Echo with figlet if exists
+  if type "figlet" > /dev/null; then
+    figlet "Arret du container $@"
+  else
+    echo "Arret du container $@"
+  fi
+
+  docker-compose down $@
 fi
-
-
-echo "Arrêt du container"
-docker-compose down
