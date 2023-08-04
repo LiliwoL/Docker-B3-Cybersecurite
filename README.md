@@ -13,6 +13,9 @@ Lancement avec
 $ ./run.sh
 ```
 
+### XSS
+
+Dans ce dossier, une explication de la faille XSS
 
 
 
