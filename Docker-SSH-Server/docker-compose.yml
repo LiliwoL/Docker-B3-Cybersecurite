@@ -4,10 +4,14 @@ services:
   openssh-server:
     container_name: openssh-server
     build:
-      context: ./                                           # Utilisation du Dockerfile du dossier
+      # Utilisation du Dockerfile présent dans le dossier
+      context: ./
 
     volumes:
-      - ./banner-message.txt:/etc/motd                     # Message de bienvenue affiché à la connexion
+      # Message de bienvenue affiché à la connexion
+      - ./banner-message.txt:/etc/motd
+      # Pour avoir accès aux logs
+      - ./logs:/var/log
     ports:
       - 2222:22
     restart: unless-stopped
