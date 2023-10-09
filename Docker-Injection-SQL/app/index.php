@@ -17,8 +17,11 @@ if ( isset($_POST['username']) && $_POST['username'] != '' )
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password';";
 
     // Exécution de la requête
+    $result = false;
     try{
-        $result = $dbh->exec( $query );   
+        $sth = $dbh->prepare( $query );
+        $sth->execute();
+        $result = $sth->fetch(PDO::FETCH_ASSOC);
     }
     catch (PDOException $e)
     {
@@ -59,17 +62,19 @@ if ( isset($_POST['username']) && $_POST['username'] != '' )
         </p>
         <p>
             <?php
-                if ( isset($result) ) {
+                if ( $result ) {
                     // Ok
                     print_r("Login successful as user: $username");
                 } else {
-                    // Error
-                    print_r("Error \n");
-                    print_r( $message );
+                    if ( isset($error) ) {
+                        // Error
+                        print_r("Error \n");
+                        print_r( $message );
+                    }
                 }
             ?>
         </p>
-    </div><!--create-account-wrap-->
-</div><!--login-form-wrap-->
+    </div>
+</div>
 </body>
 </html>
