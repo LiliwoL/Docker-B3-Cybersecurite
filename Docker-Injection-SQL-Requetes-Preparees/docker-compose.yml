@@ -1,9 +1,9 @@
 version: '3.3'
 
 services:
-  mysql-vulnerable:
+  mysql-requetes-preparees:
     image: 'mariadb:10.7'
-    container_name: mysql-vulnerable
+    container_name: mysql-requetes-preparees
     volumes:
       - ./:/docker-entrypoint-initdb.d
     environment:
@@ -17,8 +17,8 @@ services:
     networks:
       - -sql_injection
 
-  website:
-    container_name: website-vulnerable
+  website-requetes-preparees:
+    container_name: website-requetes-preparees
     build:
       context: ./
     volumes:
@@ -26,25 +26,25 @@ services:
     ports:
       - 8000:80
     depends_on:
-      - mysql-vulnerable
+      - mysql-requetes-preparees
     networks:
       - -sql_injection
 
 
   # PHPMyAdmin
-  phpmyadmin:
+  phpmyadmin-requetes-preparees:
     image: phpmyadmin
-    container_name: sql_injection_phpmyadmin
+    container_name: phpmyadmin-requetes-preparees
     restart: always
     environment:
-      - PMA_HOST=mysql-vulnerable
+      - PMA_HOST=mysql-requetes-preparees
       - PMA_PORT=3306
       - PMA_USER=pdodb
       - PMA_PASSWORD=pdodb
     ports:
       - 8081:80
     depends_on:
-      - mysql-vulnerable
+      - mysql-requetes-preparees
     networks:
       - -sql_injection
 

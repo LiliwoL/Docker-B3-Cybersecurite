@@ -2,6 +2,14 @@
 
 Container Docker pour suivre le cours Injection SQL
 
+# Injections SQL possibles
+
+## Authentification sans mot de passe
+
+`' or 1=1 --`
+
+## Enumération des utilisateurs
+
 # Lancement
 
 Clonez le dépôt

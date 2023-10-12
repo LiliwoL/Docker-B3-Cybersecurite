@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Nom du container principal
-CONTAINER_NAME="Docker Injection SQL"
+CONTAINER_NAME="Docker Injection SQL et Requetes Preparées"
 
 # Nettoyage de l'écran
 clear
