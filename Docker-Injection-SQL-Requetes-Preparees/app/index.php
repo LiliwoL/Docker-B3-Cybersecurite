@@ -8,7 +8,7 @@
 <h1>Bases de données MySQL</h1>
 <?php
 // Informations de connexion au serveur de base de données
-$servname = 'mysql-requetes-preparees';
+$servname = 'mysql-vulnerable';
 $dbname = 'pdodb';
 $user = 'pdodb';
 $pass = 'pdodb';
@@ -20,7 +20,7 @@ $adresse = "'Rue de la Chèvre'";
 $ville = "'Toulon'";
 $cp = 83000;
 $pays = "'France'";
-$mail = "'g2g@gmail.com'),('a','b','c','d',1,'e','f2'";   // Notez ici la non conformité de l'adresse mail
+$mail = "'gg@gmail.com'),('a','b','c','d',1,'e','f'";   // Notez ici la non conformité de l'adresse mail
 
 
 global $dbh;
