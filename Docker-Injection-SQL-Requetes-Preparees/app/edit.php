@@ -10,13 +10,14 @@
 
 <?php
 // Informations de connexion au serveur de base de données
-$servname = 'mysql-vulnerable';
+$servname = 'mysql-requetes-preparees';
 $dbname = 'pdodb';
 $user = 'pdodb';
 $pass = 'pdodb';
 
 
 global $dbh;
+global $sql;
 
 try{
     // Connexion à la base avec PDO
@@ -25,7 +26,6 @@ try{
     // Récupération du paramètre passé en GET
     $idClient = $_GET['id'];
     // ATTENTION, il FAUT filtrer cette valeur!!!!!!!!!!!!!
-
 
     // Création de la requête en utilisant la valeur issue du paramètre
     $sql = "SELECT * FROM Clients WHERE id= " . $idClient;

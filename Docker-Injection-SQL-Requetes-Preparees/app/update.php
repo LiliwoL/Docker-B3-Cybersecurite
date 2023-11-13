@@ -10,13 +10,14 @@
 
 <?php
 // Informations de connexion au serveur de base de données
-$servname = 'mysql-vulnerable';
+$servname = 'mysql-requetes-preparees';
 $dbname = 'pdodb';
 $user = 'pdodb';
 $pass = 'pdodb';
 
 
 global $dbh;
+global $sql;
 
 try {
     // Connexion à la base avec PDO
